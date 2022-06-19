@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.webservice.ccb/" targetNamespace="http://service.webservice.ccb/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetAccountCnInfo" type="tns:GetAccountCnInfo" />
+  <xs:element name="GetAccountCnInfoResponse" type="tns:GetAccountCnInfoResponse" />
+  <xs:complexType name="GetAccountCnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_num" type="xs:string" />
+      <xs:element minOccurs="0" name="bcs_receipt_id" type="xs:string" />
+      <xs:element minOccurs="0" name="pos_receipt_id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAccountCnInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="response">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="details" nillable="true" type="tns:detail" />
+      <xs:element minOccurs="0" name="header" type="tns:header" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account_name" type="xs:string" />
+      <xs:element minOccurs="0" name="account_num" type="xs:string" />
+      <xs:element minOccurs="0" name="bcs_receipt_id" type="xs:string" />
+      <xs:element minOccurs="0" name="card_id" type="xs:string" />
+      <xs:element minOccurs="0" name="cn_amount" type="xs:string" />
+      <xs:element minOccurs="0" name="cn_date" type="xs:string" />
+      <xs:element minOccurs="0" name="cn_no" type="xs:string" />
+      <xs:element minOccurs="0" name="epay_date" type="xs:string" />
+      <xs:element minOccurs="0" name="pay_date" type="xs:string" />
+      <xs:element minOccurs="0" name="pay_user" type="xs:string" />
+      <xs:element minOccurs="0" name="pos_receipt_id" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_amount" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_date" type="xs:string" />
+      <xs:element minOccurs="0" name="remark" type="xs:string" />
+      <xs:element minOccurs="0" name="resultCode" type="xs:string" />
+      <xs:element minOccurs="0" name="resultMsg" type="xs:string" />
+      <xs:element minOccurs="0" name="ro" type="xs:string" />
+      <xs:element minOccurs="0" name="rp_due_dat" type="xs:string" />
+      <xs:element minOccurs="0" name="rp_num" type="xs:string" />
+      <xs:element minOccurs="0" name="shop_code" type="xs:string" />
+      <xs:element minOccurs="0" name="tax_id" type="xs:string" />
+      <xs:element minOccurs="0" name="pos_company" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="header">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="resultCode" type="xs:string" />
+      <xs:element minOccurs="0" name="resultMsg" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://service.webservice.ccb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getdocumentcninfo" targetNamespace="http://service.webservice.ccb/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.11.52.109:80/Adsl2PosSwap/getdocumentcninfo?xsd=1" namespace="http://service.webservice.ccb/" />
+    </xsd:schema>
+  </types>
+  <message name="GetDocumentCNInfo">
+    <part name="parameters" element="tns:GetDocumentCNInfo" />
+  </message>
+  <message name="GetDocumentCNInfoResponse">
+    <part name="parameters" element="tns:GetDocumentCNInfoResponse" />
+  </message>
+  <portType name="GetDocumentCNInfo">
+    <operation name="GetDocumentCNInfo">
+      <input message="tns:GetDocumentCNInfo" />
+      <output message="tns:GetDocumentCNInfoResponse" />
+    </operation>
+  </portType>
+  <binding name="GetDocumentCNInfoPortBinding" type="tns:GetDocumentCNInfo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetDocumentCNInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="getdocumentcninfo">
+    <port name="GetDocumentCNInfoPort" binding="tns:GetDocumentCNInfoPortBinding">
+      <soap:address location="http://10.11.52.109:80/Adsl2PosSwap/getdocumentcninfo" />
+    </port>
+  </service>
+</definitions>

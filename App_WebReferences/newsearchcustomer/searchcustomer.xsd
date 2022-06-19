@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.webservice.ccb/" targetNamespace="http://service.webservice.ccb/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SearchCustomer" type="tns:SearchCustomer" />
+  <xs:element name="SearchCustomerResponse" type="tns:SearchCustomerResponse" />
+  <xs:complexType name="SearchCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="first_name" type="xs:string" />
+      <xs:element minOccurs="0" name="last_name" type="xs:string" />
+      <xs:element minOccurs="0" name="customer_code" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer_code" type="xs:string" />
+      <xs:element minOccurs="0" name="first_name" type="xs:string" />
+      <xs:element minOccurs="0" name="header" type="tns:header" />
+      <xs:element minOccurs="0" name="last_name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="transactions" nillable="true" type="tns:transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="header">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer_code" type="xs:string" />
+      <xs:element minOccurs="0" name="first_name" type="xs:string" />
+      <xs:element minOccurs="0" name="last_name" type="xs:string" />
+      <xs:element minOccurs="0" name="prefix_name" type="xs:string" />
+      <xs:element minOccurs="0" name="tax_id" type="xs:string" />
+      <xs:element minOccurs="0" name="telephone" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer_code" type="xs:string" />
+      <xs:element minOccurs="0" name="first_name" type="xs:string" />
+      <xs:element minOccurs="0" name="last_name" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" type="xs:string" />
+      <xs:element minOccurs="0" name="prefix_name" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_address_name" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_address_no" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_amphur" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_moo" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_postal_code" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_province" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_road" type="xs:string" />
+      <xs:element minOccurs="0" name="receipt_tumbol" type="xs:string" />
+      <xs:element minOccurs="0" name="taxid" type="xs:string" />
+      <xs:element minOccurs="0" name="telephone" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

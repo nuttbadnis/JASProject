@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://service.webservice.ccb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getaccountcninfo" targetNamespace="http://service.webservice.ccb/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.11.52.109:80/Adsl2PosSwap/getaccountcninfo?xsd=1" namespace="http://service.webservice.ccb/" />
+    </xsd:schema>
+  </types>
+  <message name="GetAccountCnInfo">
+    <part name="parameters" element="tns:GetAccountCnInfo" />
+  </message>
+  <message name="GetAccountCnInfoResponse">
+    <part name="parameters" element="tns:GetAccountCnInfoResponse" />
+  </message>
+  <portType name="GetAccountCnInfo">
+    <operation name="GetAccountCnInfo">
+      <input message="tns:GetAccountCnInfo" />
+      <output message="tns:GetAccountCnInfoResponse" />
+    </operation>
+  </portType>
+  <binding name="GetAccountCnInfoPortBinding" type="tns:GetAccountCnInfo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetAccountCnInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="getaccountcninfo">
+    <port name="GetAccountCnInfoPort" binding="tns:GetAccountCnInfoPortBinding">
+      <soap:address location="http://10.11.52.109:80/Adsl2PosSwap/getaccountcninfo" />
+    </port>
+  </service>
+</definitions>

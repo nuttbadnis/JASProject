@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://service.webservice.ccb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="searchcustomer" targetNamespace="http://service.webservice.ccb/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.11.52.44:8051/Adsl2PosSwap/searchcustomer?xsd=1" namespace="http://service.webservice.ccb/" />
+    </xsd:schema>
+  </types>
+  <message name="SearchCustomer">
+    <part name="parameters" element="tns:SearchCustomer" />
+  </message>
+  <message name="SearchCustomerResponse">
+    <part name="parameters" element="tns:SearchCustomerResponse" />
+  </message>
+  <portType name="SearchCustomer">
+    <operation name="SearchCustomer">
+      <input message="tns:SearchCustomer" />
+      <output message="tns:SearchCustomerResponse" />
+    </operation>
+  </portType>
+  <binding name="SearchCustomerPortBinding" type="tns:SearchCustomer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SearchCustomer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="searchcustomer">
+    <port name="SearchCustomerPort" binding="tns:SearchCustomerPortBinding">
+      <soap:address location="http://10.11.52.44:8051/Adsl2PosSwap/searchcustomer" />
+    </port>
+  </service>
+</definitions>
